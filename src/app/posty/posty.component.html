@@ -1,0 +1,23 @@
+<button (click)="addPost()">Dodaj post</button>
+<button (click)="updatePost()">Aktualizuj post</button>
+<button (click)="deletePost(101)">Usun post</button>
+<button (click)="patchPost()">Patch post</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tytuł</th>
+      <th>User Id</th>
+      <th>Treść</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts" (click)="getPostById(post.id)" (click)="getPostByUserId(post.userId)">
+      <th>{{post.id}}</th>
+      <th>{{post.title}}</th>
+      <th>{{post.userId}}</th>
+      <th>{{post.body}}</th>
+    </tr>
+  </tbody>
+</table>

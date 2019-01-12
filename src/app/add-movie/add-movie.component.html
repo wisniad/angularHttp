@@ -1,0 +1,19 @@
+<form (ngSubmit)="formOnSubmit(movieForm)" #movieForm="ngForm">
+  <div>
+    <label for="Title">Tytul</label>
+    <input [(ngModel)]="movie.title" required type="text" name="title" #title="ngModel"/>
+    <div *ngIf="!title.valid">
+        <p>Pole wymagane</p>
+    </div>
+  </div>
+  <div>
+    <label for="Title">Year</label>
+    <input [(ngModel)]="movie.year" type="number" name="year" />
+  </div>
+  <div>
+    <label for="Title">Rate</label>
+    <input [(ngModel)]="movie.rate" type="number" name="rate" />
+  </div>
+  <button type="submit" [disabled]="!movieForm.valid">Wyslij</button>
+  <button type="reset">Reset</button>
+</form>
